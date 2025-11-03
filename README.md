@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# 🔐 Login React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este proyecto es una **app de login de prueba** desarrollada con **React Native (Expo)**.  
+El objetivo es practicar la creación de formularios, manejo de estado con `useState`, validación de entradas y navegación básica entre pantallas.  
 
-## Get started
+> 💡 Ideal para estudiantes o desarrolladores que comienzan en React Native y quieren entender cómo estructurar una app móvil paso a paso.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📱 Características principales
 
-2. Start the app
+✅ Pantalla de inicio de sesión (Login)  
+✅ Validación simple de usuario y contraseña  
+✅ Mensaje de error en caso de credenciales inválidas  
+✅ Simulación de autenticación (sin backend real)  
+✅ Navegación hacia una pantalla "Home" al iniciar sesión  
+✅ Diseño limpio y adaptable  
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tecnologías utilizadas
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [React Navigation](https://reactnavigation.org/)
+- [useState](https://react.dev/reference/react/useState) y [useEffect](https://react.dev/reference/react/useEffect)
+- [JavaScript ES6](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🚀 Instalación y ejecución
 
-When you're ready, run:
-
+### 1️⃣ Clonar el repositorio
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+git clone https://github.com/bastianCeronDuque/login-react-native.git
