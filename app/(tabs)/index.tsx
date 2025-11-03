@@ -9,6 +9,9 @@ export default function HomeScreen() {
       <Link href="/modal" asChild>
         <Text style={styles.buttonText}>Ir al Modal</Text>
       </Link>
+      <Link href="/login" asChild>
+        <Text style={styles.buttonText}>Ir al Login</Text>
+      </Link>
     </View>
   );
 }
