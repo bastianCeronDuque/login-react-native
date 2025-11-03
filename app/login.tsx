@@ -1,12 +1,38 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import { Alert, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function LoginScreen() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const router = useRouter();
+    const handleUsernameChange = (text: string) => {
+        setUsername(text);
+    }
+    const handlePasswordChange = (text: string) => {
+        setPassword(text);
+    }
+    const handleLogin = () => {
+        const EXPECTED_USER = {
+            username: "user",
+            password: "123"
+        }
+        if (username === EXPECTED_USER.username && password === EXPECTED_USER.password) {
+            router.replace("/(tabs)");
+        }else{
+            Alert.alert("Error", "Usuario o contraseña incorrectos");
+        }
+    }
   return (
     <View style={styles.container}>
       <Text>Inicia Sesion</Text>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Usuario</Text>
-        <TextInput style={styles.input} placeholder="Ingresa tu usuario" />
+        <TextInput 
+        style={styles.input} 
+        placeholder="Ingresa tu usuario" 
+        onChangeText={handleUsernameChange}
+        />
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Pasword</Text>
@@ -14,9 +40,13 @@ export default function LoginScreen() {
           style={styles.input}
           placeholder="Ingresa tu pasword"
           secureTextEntry
+          onChangeText={handlePasswordChange}
         />
       </View>
-      <Pressable style={styles.button}>
+      <Pressable 
+      style={styles.button}
+      onPress={handleLogin}
+      >
         <Text style={styles.buttonText}>Login</Text>
       </Pressable>
     </View>
