@@ -1,11 +1,13 @@
+import { useAuth } from "@/components/context/auth-context";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-
 export default function LoginScreen() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
+    const {login} = useAuth();
+
     const handleUsernameChange = (text: string) => {
         setUsername(text);
     }
@@ -13,14 +15,11 @@ export default function LoginScreen() {
         setPassword(text);
     }
     const handleLogin = () => {
-        const EXPECTED_USER = {
-            username: "user",
-            password: "123"
-        }
-        if (username === EXPECTED_USER.username && password === EXPECTED_USER.password) {
+        try {
+            login(username, password);
             router.replace("/(tabs)");
-        }else{
-            Alert.alert("Error", "Usuario o contraseña incorrectos");
+        }catch(error){
+            Alert.alert("Error de login", (error as Error).message);
         }
     }
   return (
